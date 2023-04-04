@@ -1,0 +1,1 @@
+print("Fisier saptamana 1")
