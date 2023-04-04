@@ -1,0 +1,12 @@
+Index: fisier1.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>print(\"Fisier saptamana 1\")
+===================================================================
+diff --git a/fisier1.py b/fisier1.py
+--- a/fisier1.py	
++++ b/fisier1.py	
+@@ -1,1 +1,1 @@
+-print("Fisier saptamana 1")
+\ No newline at end of file
++print("Fisier saptamana 1")
