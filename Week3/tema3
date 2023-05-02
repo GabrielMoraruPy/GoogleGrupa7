@@ -1,0 +1,29 @@
+categories_file = open("categories.txt", "w")
+tasks_file = open("tasks.txt", "w")
+
+categories = []
+print("Introduceți categoriile de taskuri (introduceți 'stop' pentru a opri introducerea):")
+while True:
+    category = input()
+    if category == "stop":
+        break
+    categories.append(category)
+    categories_file.write(category + "\n")
+categories_file.close()
+
+tasks = []
+print("Introduceți task-uri (introduceți 'stop' pentru a opri introducerea):")
+while True:
+    task = input("Task: ")
+    if task == "stop":
+        break
+    deadline = input("Data limită: ")
+    responsible_person = input("Persoană responsabilă: ")
+    category = input("Categorie: ")
+    if category not in categories:
+        print("Categoria introdusă nu există. Introduceți o categorie validă.")
+        continue
+    task_info = [task, deadline, responsible_person, category]
+    tasks.append(task_info)
+    tasks_file.write(task + "|" + deadline + "|" + responsible_person + "|" + category + "\n")
+tasks_file.close()
