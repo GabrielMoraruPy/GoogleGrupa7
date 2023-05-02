@@ -1,5 +1,5 @@
 categorii = open("categorii.txt", "w")
-taskuri = open("taskuri.txt", "w")
+tasks_file = open("taskuri.txt", "w")
 
 categories = []
 print("Introduceți categoriile de taskuri (introduceți 'stop' pentru a opri introducerea):")
@@ -25,6 +25,6 @@ while True:
         continue
     task_info = [task, deadline, responsible_person, category]
     tasks.append(task_info)
-    taskuri.write(task + "|" + deadline + "|" + responsible_person + "|" + category + "\n")
-taskuri.close()
+    tasks_file.write(task + "|" + deadline + "|" + responsible_person + "|" + category + "\n")
+tasks_file.close()
 
