@@ -1,3 +1,5 @@
+import datetime
+
 print("Format CNP S-AA-LL-ZZ-JJ-NNN-C")
 cnp = input("Tastati CNP-ul: ")
 
@@ -32,16 +34,23 @@ if len(cnp) == 13:
     if S not in range(1, 9):
         print("CNP invalid")
         valid = False
-    if AA not in range(0, 100):
-        print("CNP invalid")
-        valid = False
-    if LL not in range(1, 13):
-        print("CNP invalid")
-        valid = False
-    if ZZ not in range(1, 32):
-        print("CNP invalid")
+    # if AA not in range(0, 100):
+    #     print("CNP invalid")
+    #     valid = False
+    # if LL not in range(1, 13):
+    #     print("CNP invalid")
+    #     valid = False
+    # if ZZ not in range(1, 32):
+    #     print("CNP invalid")
+    #     valid = False
+    try:
+        datetime.datetime(int(AA), int(LL), int(ZZ))
+    except ValueError:
         valid = False
     if JJ not in range(1, 47) and JJ not in range(51, 53):
+        print("CNP invalid")
+        valid = False
+    if NNN not in range(1, 1000):
         print("CNP invalid")
         valid = False
     if C != str(rest) and C != 1:
@@ -83,6 +92,8 @@ for numar, judet in enumerate(judete):
     if JJ == numar + 1:
         mesaj_2 = mesaj_1 + ("in judetul {}, avand numarul de evidenta {} si cifra de control {}.".format(judet, NNN, C))
 
+if valid:
+    print(mesaj_2)
 
 #
 # an = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
