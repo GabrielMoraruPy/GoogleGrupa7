@@ -102,14 +102,12 @@ border = Border(
 alignment = Alignment(horizontal='center', vertical='center')
 fill = PatternFill(fill_type='solid', fgColor='DDDDDDDD')
 
-# Apply formatting to header row
 for cell in sheet[1]:
     cell.font = font
     cell.border = border
     cell.alignment = alignment
     cell.fill = fill
 
-# Apply formatting to data rows
 for row in sheet.iter_rows(min_row=2):
     for cell in row:
         cell.border = border
@@ -124,7 +122,7 @@ for column in sheet.columns:
                 max_length = len(cell.value)
         except:
             pass
-    adjusted_width = (max_length + 2) * 1.2  # Add padding and adjust the width factor as needed
+    adjusted_width = (max_length + 2) * 1.2
     sheet.column_dimensions[column_letter].width = adjusted_width
 
 workbook.save("date_tema.xlsx")
